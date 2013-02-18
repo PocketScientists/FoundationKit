@@ -45,6 +45,14 @@ NS_INLINE NSTimeInterval FKTimeIntervalDays(NSTimeInterval days) {
   return (NSTimeInterval)(days * 3600. * 24.);
 }
 
+NS_INLINE NSTimeInterval FKMinutesFromTimeInterval(NSTimeInterval seconds) {
+  return (NSTimeInterval)floor(seconds / 60.f);
+}
+
+NS_INLINE NSTimeInterval FKHoursFromTimeInterval(NSTimeInterval seconds) {
+  return (NSTimeInterval)floor(seconds / 3600.f);
+}
+
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
 #pragma mark CGAffineTransform Helper
