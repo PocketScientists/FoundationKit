@@ -1,6 +1,10 @@
 // Part of FoundationKit http://foundationk.it
 
 // Blocks
+#import "NSArray+FKBlocks.h"
+#import "NSDictionary+FKBlocks.h"
+#import "NSMutableArray+FKBlocks.h"
+#import "NSMutableDictionary+FKBlocks.h"
 #import "NSOperationQueue+FKBlocks.h"
 
 // Shorthands
@@ -41,3 +45,4 @@
 #import "NSString+FKAdditions.h"
 #import "NSString+FKXML.h"
 #import "NSUserDefaults+FKAdditions.h"
+#import "NSURL+FKQueryParameters.h"
