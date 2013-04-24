@@ -117,6 +117,15 @@ NSDateFormatter* dateFormatter(void);
   return [formatter stringFromDate:self];
 }
 
+- (NSString *)dateStringWithDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle {
+  NSDateFormatter* formatter = dateFormatter();
+  formatter.dateStyle = dateStyle;
+  formatter.timeStyle = timeStyle;[formatter setAMSymbol:@"am"];
+  [formatter setPMSymbol:@"pm"];
+  
+  return [formatter stringFromDate:self];
+}
+
 - (BOOL)isBefore:(NSDate *)otherDate {
 	return [self timeIntervalSinceDate:otherDate] < 0;
 }

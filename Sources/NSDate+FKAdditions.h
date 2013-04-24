@@ -16,6 +16,7 @@
 
 - (NSString *)relativeDateString;
 - (NSString *)dateStringWithFormat:(NSString *)format;
+- (NSString *)dateStringWithDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle;
 
 - (BOOL)isBefore:(NSDate *)otherDate;
 - (BOOL)isAfter:(NSDate *)otherDate;
