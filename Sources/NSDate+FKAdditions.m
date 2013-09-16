@@ -101,7 +101,7 @@ NSDateFormatter* dateFormatter(void);
 		}
 	}
   
-	return [self dateStringWithFormat:_(@"MM/dd/yy")];
+	return [self dateStringWithDateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle];
 }
 
 - (NSString *)dateStringWithFormat:(NSString *)format {
