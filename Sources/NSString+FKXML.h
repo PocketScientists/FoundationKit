@@ -1,6 +1,6 @@
 // Part of FoundationKit http://foundationk.it
 //
-// Contains stuff from http://stackoverflow.com/questions/1105169/html-character-decoding-in-objective-c-cocoa-touch
+// Based on https://github.com/sbentzen/Google-Toolbox-for-Mac/blob/master/Foundation/GTMNSString+HTML.m
 
 #import <Foundation/Foundation.h>
 
@@ -12,6 +12,6 @@
 /**
  * Returns a new string where XML entities are replace by their representation, e.g. &ouml; -> ö
  */
-- (NSString *)stringByDecodingXMLEntities;
+- (NSString *)fkit_stringByDecodingXMLEntities;
 
 @end

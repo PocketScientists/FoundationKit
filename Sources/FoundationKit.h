@@ -1,21 +1,12 @@
 // Part of FoundationKit http://foundationk.it
 
 // Blocks
-#import "NSArray+FKBlocks.h"
-#import "NSDictionary+FKBlocks.h"
-#import "NSMutableArray+FKBlocks.h"
-#import "NSMutableDictionary+FKBlocks.h"
 #import "NSOperationQueue+FKBlocks.h"
 
 // Shorthands
 #import "NSArray+FKConcise.h"
-#import "NSDictionary+FKConcise.h"
 #import "NSMutableArray+FKConcise.h"
-#import "NSNull+FKConcise.h"
 #import "NSNumber+FKConcise.h"
-#import "NSSet+FKConcise.h"
-#import "NSString+FKConcise.h"
-#import "NSValue+FKConcise.h"
 
 // Macro helpers
 #import "FKAssert.h"
@@ -29,14 +20,15 @@
 
 #import "FKPaths.h"
 #import "FKMutableIntArray.h"
+#import "NSArray+FKDiff.h"
 #import "NSData+FKCrypto.h"
 #import "NSDate+FKAdditions.h"
 #import "NSError+FKAdditions.h"
 #import "NSMutableArray+FKReorder.h"
+#import "NSMutableAttributedString+FKAdditions.h"
 #import "NSMutableString+FKAdditions.h"
 #import "NSNotificationCenter+FKMainThread.h"
 #import "NSObject+FKAssociatedObjects.h"
-#import "NSObject+FKDescription.h"
 #import "NSObject+FKDeallocBlock.h"
 #import "NSObject+FKObserver.h"
 #import "NSObject+FKPerform.h"

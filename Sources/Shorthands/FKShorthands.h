@@ -10,8 +10,16 @@ NS_INLINE NSString* _(NSString *key) {
   return NSLocalizedString(key, key);
 }
 
+NS_INLINE NSString* FKApplicationShortVersion() {
+  return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+}
+
 NS_INLINE NSString* FKApplicationVersion() {
   return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+}
+
+NS_INLINE NSString* FKApplicationVersionFormatted() {
+  return [NSString stringWithFormat:@"%@ (%@)", FKApplicationShortVersion(), FKApplicationVersion()];
 }
 
 NS_INLINE NSString* FKApplicationName() {
@@ -41,6 +49,9 @@ NS_INLINE BOOL FKClassExists(NSString *className) {
 #define $property(propertyName)	@#propertyName
 #endif
 
+// Macro for compile-time errors of forbidden initializers, based on Javi Soto's Gist: https://gist.github.com/JaviSoto/5906004
+#define FKDesignatedInitializer(__SEL__) __attribute__((unavailable("Invoke the designated initializer `" # __SEL__ "` instead.")))
+
 // Shortcut for checking a bit in a bitmask
 #define $flagSet(MASK, FLAG)  ((MASK & FLAG) == FLAG)
 
@@ -59,4 +70,8 @@ NS_INLINE BOOL $empty(id object) {
 	return object == nil || ([object isEqual:[NSNull null]]) ||
   ([object respondsToSelector:@selector(length)] && [(NSData *)object length] == 0) ||
   ([object respondsToSelector:@selector(count)]  && [(NSArray *)object count] == 0);
+}
+
+NS_INLINE BOOL $equals(id obj1, id obj2) {
+	return (obj1 == obj2 || [obj1 isEqual:obj2]);
 }
