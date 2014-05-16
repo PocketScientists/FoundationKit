@@ -59,7 +59,7 @@ NS_INLINE NSTimeInterval FKHoursFromTimeInterval(NSTimeInterval seconds) {
 ////////////////////////////////////////////////////////////////////////
 
 NS_INLINE CGAffineTransform FKAffineTransformMakeRotateTranslate(CGFloat angle, CGFloat dx, CGFloat dy) {
-  return CGAffineTransformMake(cosf(angle), sinf(angle), -sinf(angle), cosf(angle), dx, dy);
+  return CGAffineTransformMake(cos(angle), sin(angle), -sin(angle), cos(angle), dx, dy);
 }
 
 NS_INLINE CGAffineTransform FKAffineTransformMakeScaleTranslate(CGFloat sx, CGFloat sy, CGFloat dx, CGFloat dy) {
