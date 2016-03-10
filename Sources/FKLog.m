@@ -24,7 +24,7 @@ NSString *_FKLogToString(NSString *file, unsigned int line, ...) {
     char *argumentName = va_arg(ap, char *);
     void *argument = va_arg(ap, void *);
     
-    if (*(void **)argument == (__bridge void *)kFKLogInternalDontOutputMe) {
+    if ((strcmp(argumentTypeEncoding, @encode(id)) == 0) && *(void **)argument == (__bridge void *)kFKLogInternalDontOutputMe) {
       break;
     }
 
