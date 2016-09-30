@@ -47,7 +47,7 @@ NSDateFormatter* dateFormatter(void);
 
 + (NSDate *)fkit_dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second {
 	NSDateComponents *comps = [[NSDateComponents alloc] init];
-  NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+  NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
   
 	[comps setYear:year];
 	[comps setMonth:month];
@@ -148,20 +148,20 @@ NSDateFormatter* dateFormatter(void);
 }
 
 - (NSDate *)fkit_midnightDate {
-	return [[NSCalendar currentCalendar] dateFromComponents:[[NSCalendar currentCalendar] components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:self]];
+	return [[NSCalendar currentCalendar] dateFromComponents:[[NSCalendar currentCalendar] components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:self]];
 }
 
 - (NSDateComponents *)fkit_gregorianCalendarComponents {
-	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-	NSDateComponents *components = [gregorian components:(NSSecondCalendarUnit |
-                                                        NSMinuteCalendarUnit |
-                                                        NSHourCalendarUnit |
-                                                        NSDayCalendarUnit |
-                                                        NSWeekdayCalendarUnit |
+	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+	NSDateComponents *components = [gregorian components:(NSCalendarUnitSecond |
+                                                        NSCalendarUnitMinute |
+                                                        NSCalendarUnitHour |
+                                                        NSCalendarUnitDay |
+                                                        NSCalendarUnitWeekday |
                                                         NSWeekCalendarUnit |
-                                                        NSWeekOfYearCalendarUnit |
-                                                        NSMonthCalendarUnit |
-                                                        NSYearCalendarUnit) fromDate:self];
+                                                        NSCalendarUnitWeekOfYear |
+                                                        NSCalendarUnitMonth |
+                                                        NSCalendarUnitYear) fromDate:self];
 	return components;
 }
 
@@ -182,9 +182,9 @@ NSDateFormatter* dateFormatter(void);
 }
 
 - (NSInteger)fkit_dayOfYearComponent {
-  NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-  NSUInteger dayOfYear = [gregorian ordinalityOfUnit:NSDayCalendarUnit
-                                              inUnit:NSYearCalendarUnit
+  NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+  NSUInteger dayOfYear = [gregorian ordinalityOfUnit:NSCalendarUnitDay
+                                              inUnit:NSCalendarUnitYear
                                              forDate:self];
   return dayOfYear;
 }
@@ -210,8 +210,8 @@ NSDateFormatter* dateFormatter(void);
 }
 
 - (NSInteger)fkit_daysSinceDate:(NSDate *)date {
-  NSUInteger unitFlags = NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit;
-  NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+  NSUInteger unitFlags = NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute;
+  NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
   NSDateComponents *components = [calendar components:unitFlags fromDate:date toDate:self options:0];
 
   if (components.hour > 0 || components.minute > 0) {
