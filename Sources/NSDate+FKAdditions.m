@@ -158,7 +158,7 @@ NSDateFormatter* dateFormatter(void);
                                                         NSCalendarUnitHour |
                                                         NSCalendarUnitDay |
                                                         NSCalendarUnitWeekday |
-                                                        NSWeekCalendarUnit |
+                                                        NSCalendarUnitWeekOfMonth |
                                                         NSCalendarUnitWeekOfYear |
                                                         NSCalendarUnitMonth |
                                                         NSCalendarUnitYear) fromDate:self];
@@ -194,7 +194,7 @@ NSDateFormatter* dateFormatter(void);
 }
 
 - (NSInteger)fkit_weekComponent {
-	return [[self fkit_gregorianCalendarComponents] week];
+	return [[self fkit_gregorianCalendarComponents] weekOfYear];
 }
 
 - (NSInteger)fkit_weekOfYearComponent {

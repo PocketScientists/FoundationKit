@@ -1,7 +1,6 @@
 // Part of FoundationKit http://foundationk.it
 
 #import <Foundation/Foundation.h>
-#import "FKShorthands.h"
 
 
 /**
