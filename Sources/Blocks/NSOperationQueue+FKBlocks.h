@@ -13,7 +13,7 @@
  
  @param block the block to execute, when he queue finishes
  */
-- (void)fkit_whenFinished:(void (^)())block;
+- (void)fkit_whenFinished:(void (^)(void))block;
 
 /**
  This method removes the block-delegate that gets executed, when the queue finishes.

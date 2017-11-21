@@ -26,7 +26,7 @@ static FKObserver *observer = nil;
 
 @implementation NSOperationQueue (FKBlocks)
 
-- (void)fkit_whenFinished:(void (^)())block {
+- (void)fkit_whenFinished:(void (^)(void))block {
   self.fkit_finishedBlock = block;
 }
 
