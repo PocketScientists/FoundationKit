@@ -67,20 +67,11 @@ static void FKCacheEmailAddressValue(NSString *string, BOOL isValidEmailAddress)
 }
 
 - (NSString *)fkit_URLEncodedString {
-  NSString *result = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
-                                                                                           (__bridge CFStringRef)self,
-                                                                                           NULL,
-                                                                                           CFSTR("!*'();:@&=+$,/?%#[]"),
-                                                                                           kCFStringEncodingUTF8);
-  return result;
+  return [self stringByAddingPercentEncodingWithAllowedCharacters: [NSCharacterSet URLPathAllowedCharacterSet]];
 }
 
 - (NSString*)fkit_URLDecodedString {
-  NSString *result = (__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault,
-                                                                                                           (__bridge CFStringRef)self,
-                                                                                                           CFSTR(""),
-                                                                                                           kCFStringEncodingUTF8);
-  return result;
+  return [self stringByRemovingPercentEncoding];
 }
 
 - (BOOL)fkit_containsString:(NSString *)string {

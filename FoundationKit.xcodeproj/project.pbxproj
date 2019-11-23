@@ -254,6 +254,7 @@
 		9BF1436618C9F78D000F9D0C /* NSMutableArray+FKBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+FKBlocks.m"; path = "Blocks/NSMutableArray+FKBlocks.m"; sourceTree = "<group>"; };
 		9BF1436A18C9F7E0000F9D0C /* NSMutableDictionary+FKBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+FKBlocks.h"; sourceTree = "<group>"; };
 		9BF1436B18C9F7E0000F9D0C /* NSMutableDictionary+FKBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+FKBlocks.m"; sourceTree = "<group>"; };
+		A98C3E042389E3A900CBAE67 /* FoundationKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FoundationKit.podspec; sourceTree = "<group>"; };
 		A9A0078F1E201CC40068A936 /* FoundationKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FoundationKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A007911E201CC40068A936 /* FoundationKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoundationKit.h; sourceTree = "<group>"; };
 		A9A007921E201CC40068A936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -272,7 +273,6 @@
 		C5E319D113C4744800D9CA76 /* NSData+FKCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+FKCrypto.h"; sourceTree = "<group>"; };
 		C5E319D213C4744800D9CA76 /* NSData+FKCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+FKCrypto.m"; sourceTree = "<group>"; };
 		C5E319D513C474E800D9CA76 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
-		C5E319D713C474FE00D9CA76 /* FoundationKit.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = FoundationKit.h; sourceTree = "<group>"; tabWidth = 2; };
 		C5EF038513C98EC100953F2B /* FKSynthesizeSingletonTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKSynthesizeSingletonTests.h; sourceTree = "<group>"; };
 		C5EF038613C98EC100953F2B /* FKSynthesizeSingletonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKSynthesizeSingletonTests.m; sourceTree = "<group>"; };
 		DC410CFF13C39BFD00C90C19 /* libFoundationKitMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFoundationKitMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -421,7 +421,6 @@
 		C5E319C913C473BD00D9CA76 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				C5E319D713C474FE00D9CA76 /* FoundationKit.h */,
 				39CC1E24142F600A0017578F /* Blocks */,
 				39E85BCC1434FA6E008FC8D5 /* Optional */,
 				39CC1E25142F60120017578F /* Shorthands */,
@@ -495,6 +494,7 @@
 		DC410CF413C39BFD00C90C19 = {
 			isa = PBXGroup;
 			children = (
+				A98C3E042389E3A900CBAE67 /* FoundationKit.podspec */,
 				C5E319C913C473BD00D9CA76 /* Sources */,
 				C5E319CE13C473E800D9CA76 /* Supporting Files */,
 				C5C18E8313C8C64C00DD0872 /* Tests */,
@@ -658,7 +658,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastTestingUpgradeCheck = 0730;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = FoundationKit;
 				TargetAttributes = {
 					A9A0078E1E201CC40068A936 = {
@@ -669,10 +669,11 @@
 			};
 			buildConfigurationList = DC410CF913C39BFD00C90C19 /* Build configuration list for PBXProject "FoundationKit" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = DC410CF413C39BFD00C90C19;
 			productRefGroup = DC410D0013C39BFD00C90C19 /* Products */;
@@ -915,8 +916,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = FoundationKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = net.nousdigital.FoundationKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -953,8 +955,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = FoundationKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = net.nousdigital.FoundationKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1010,6 +1013,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -1048,6 +1052,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SKIP_INSTALL = YES;
 			};
@@ -1057,6 +1062,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -1088,6 +1094,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
 			};
