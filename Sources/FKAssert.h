@@ -2,7 +2,7 @@
 //
 // Derived from Marcus Zarra's Blog-Post: http://www.cimgf.com/2010/05/02/my-current-prefix-pch-file/
 
-#import <FKInternal.h>
+#import <FoundationKit/FKInternal.h>
 
 // Debug Branch
 #ifdef FK_DEBUG

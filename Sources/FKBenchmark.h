@@ -1,7 +1,7 @@
 // Part of FoundationKit http://foundationk.it
 
 #import <mach/mach_time.h>
-#import <FKInternal.h>
+#import <FoundationKit/FKInternal.h>
 
 /**
  If we are in Debug-Mode this functions benchmarks the given block and logs

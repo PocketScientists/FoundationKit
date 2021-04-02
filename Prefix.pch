@@ -4,6 +4,6 @@
 
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
-    #import "FoundationKit.h"
-    #import "FKInternal.h"
+    #import <FoundationKit/FoundationKit.h>
+    #import <FoundationKit/FKInternal.h>
 #endif
