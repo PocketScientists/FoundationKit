@@ -1,7 +1,7 @@
 // Part of FoundationKit http://foundationk.it
 
 #import <Foundation/Foundation.h>
-#import "FKDeallocBlock.h"
+#import <FKDeallocBlock.h>
 
 /**
  This category serves as a shorthand for adding a FKDeallocBlock to an object,
