@@ -10,19 +10,19 @@ NS_INLINE NSString* _(NSString *key) {
   return NSLocalizedString(key, key);
 }
 
-NS_INLINE NSString* FKApplicationShortVersion() {
+NS_INLINE NSString* FKApplicationShortVersion(void) {
   return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
 }
 
-NS_INLINE NSString* FKApplicationVersion() {
+NS_INLINE NSString* FKApplicationVersion(void) {
   return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
 }
 
-NS_INLINE NSString* FKApplicationVersionFormatted() {
+NS_INLINE NSString* FKApplicationVersionFormatted(void) {
   return [NSString stringWithFormat:@"%@ (%@)", FKApplicationShortVersion(), FKApplicationVersion()];
 }
 
-NS_INLINE NSString* FKApplicationName() {
+NS_INLINE NSString* FKApplicationName(void) {
   return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"];
 }
 

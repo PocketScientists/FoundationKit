@@ -66,7 +66,7 @@ NS_INLINE NSString* FKStringFromBoolOrCharValue(BOOL boolOrCharvalue) {
 		return @"YES";
 	if(boolOrCharvalue == NO)
 		return @"NO";
-	return [NSString stringWithFormat:@"'%c'", boolOrCharvalue];
+	return [NSString stringWithFormat:@"'%c'", (char)boolOrCharvalue];
 }
 
 NS_INLINE NSString *FKStringFromFourCharCodeOrUnsignedInt32(FourCharCode fourcc) {

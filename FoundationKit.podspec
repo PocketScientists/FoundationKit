@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
-  s.platform = :ios, '11.0'
-  s.ios.deployment_target = '11.0'
+  s.platform = :ios, '12.0'
+  s.ios.deployment_target = '12.0'
   s.name = "FoundationKit"
-  s.version = "1.0.4"
+  s.version = "1.0.5"
   s.license = 'MIT'
   s.summary = "Everything that really should be in Foundation, but isn't."
   s.homepage = "https://github.com/kampfgnu/FoundationKit"
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
     'Peter Steinberger' => 'foundationkit@petersteinberger.com',
     'Matthias Tretter' => 'myell0w@me.com'
   }
-  s.source = { :git => "https://github.com/PocketScientists/FoundationKit.git", :tag => '1.0.4' }
+  s.source = { :git => "https://github.com/PocketScientists/FoundationKit.git", :tag => '1.0.5' }
   s.source_files = 'Sources/*.{h,m}', 'Sources/Shorthands/*.{h,m}', 'Sources/Blocks/*.{h,m}', 'FoundationKit/FoundationKit.h'
 
   s.public_header_files = 'Sources/*.{h}', 'Sources/Shorthands/*.{h}', 'Sources/Blocks/*.{h}', 'FoundationKit/FoundationKit.h'
